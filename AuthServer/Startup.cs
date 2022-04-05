@@ -16,6 +16,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AuthServer.Configuration;
 
 namespace AuthServer
 {
@@ -50,11 +51,11 @@ namespace AuthServer
             }).AddCookie("Cookies")
              .AddOpenIdConnect("oidc", options =>
              {
-                 options.Authority = "https://infopanel.somee.com";
+                 options.Authority = AppSettings.AuthorityUrl;
                  options.SignInScheme = "Cookies";
                  options.RequireHttpsMetadata = false;
-                 options.ClientId = "AuthServer01";
-                 options.ClientSecret = "c58c72ee-d7af-4af4-8cc2-32aff720c5d2";
+                 options.ClientId = AppSettings.ClientId;
+                 options.ClientSecret = AppSettings.ClientSecret;
                  options.ResponseType = "code";
                  options.SaveTokens = true;
                  options.Scope.Add("openid");

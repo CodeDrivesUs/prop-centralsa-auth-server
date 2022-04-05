@@ -154,3 +154,4 @@ C:\Users\Mzweshiah\source\repos\auth-server\AuthServer\bin\Debug\net5.0\Microsof
 C:\Users\Mzweshiah\source\repos\auth-server\AuthServer\bin\Debug\net5.0\Microsoft.Extensions.FileProviders.Embedded.dll
 C:\Users\Mzweshiah\source\repos\auth-server\AuthServer\bin\Debug\net5.0\Microsoft.Extensions.Identity.Core.dll
 C:\Users\Mzweshiah\source\repos\auth-server\AuthServer\bin\Debug\net5.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\Mzweshiah\source\repos\auth-server\AuthServer\bin\Debug\net5.0\RestSharp.dll
