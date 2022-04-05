@@ -3,6 +3,7 @@ using AuthServer.SignalRHubs;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -39,6 +40,9 @@ namespace AuthServer
 
             services.AddDbContext<AuthServerDbContext>(options =>
                  options.UseSqlServer("Server=sql.bsite.net\\MSSQL2016;Database=liveserver_Databse;pwd=Password01;user Id=liveserver_Databse;MultipleActiveResultSets=true"));
+            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
+             .AddEntityFrameworkStores<AuthServerDbContext>();
+
             services.AddAuthentication(options =>
             {
                 options.DefaultScheme = "Cookies";
@@ -49,8 +53,8 @@ namespace AuthServer
                  options.Authority = "https://infopanel.somee.com";
                  options.SignInScheme = "Cookies";
                  options.RequireHttpsMetadata = false;
-                 options.ClientId = "Auth_Sever";
-                 options.ClientSecret = "1q2w3e*";
+                 options.ClientId = "AuthServer01";
+                 options.ClientSecret = "c58c72ee-d7af-4af4-8cc2-32aff720c5d2";
                  options.ResponseType = "code";
                  options.SaveTokens = true;
                  options.Scope.Add("openid");
@@ -85,6 +89,7 @@ namespace AuthServer
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseCors("CorsPolicy");

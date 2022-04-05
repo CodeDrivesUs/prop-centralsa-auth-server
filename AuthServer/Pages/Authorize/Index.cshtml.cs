@@ -11,7 +11,7 @@ namespace AuthServer.Pages.Authorize
     [Authorize]
     public class IndexModel : PageModel
     {
-        public void OnGet()
+        public void OnGet(string connectionId)
         {
         }
     }
