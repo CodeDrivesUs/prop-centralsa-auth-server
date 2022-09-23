@@ -17,6 +17,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AuthServer.Configuration;
+using IdentityModel;
 
 namespace AuthServer
 {
@@ -62,7 +63,11 @@ namespace AuthServer
                  options.Scope.Add("profile");
                  options.Scope.Add("email");
                  options.Scope.Add("role");
-                
+                 options.TokenValidationParameters = new TokenValidationParameters()//Maps properties from jwtClaims
+                 {
+                     NameClaimType = JwtClaimTypes.Email,
+                     RoleClaimType = JwtClaimTypes.Role
+                 };
              });
             services.AddSignalR();
             services.AddCors(o => o.AddPolicy("CorsPolicy", builder =>
@@ -92,7 +97,6 @@ namespace AuthServer
 
             app.UseAuthentication();
             app.UseAuthorization();
-
             app.UseCors("CorsPolicy");
             app.UseEndpoints(endpoints =>
             {

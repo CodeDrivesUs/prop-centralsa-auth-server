@@ -24,6 +24,7 @@ namespace AuthServer.Services
             };
 
             var request = new RestRequest();
+            request.Method = Method.Post;
             request.AddParameter("grant_type", "client_credentials", ParameterType.GetOrPost);
             request.AddParameter("response_type", "application/json", ParameterType.GetOrPost);
             var response = await client.ExecuteAsync(request);

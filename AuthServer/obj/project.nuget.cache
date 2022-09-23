@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "3yRwXEv7cGJRnAPBiwYLVfO3trsqoJNxN2vMs93nCNokoeSdj7F/vDFdCW49uAyDUrkd6YjH42L9dJy5LqcGVg==",
+  "dgSpecHash": "49qZvjJjW3tm2AqZ5VSmHvHIMSBUgwA7+y40ksrq3e5bCDLMOUoff5BBwDpjsrTDixTslUbxG9Cx7GP+tRhgug==",
   "success": true,
   "projectFilePath": "C:\\Users\\Mzweshiah\\source\\repos\\auth-server\\AuthServer\\AuthServer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Mzweshiah\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
+    "C:\\Users\\Mzweshiah\\.nuget\\packages\\identitymodel\\6.0.0\\identitymodel.6.0.0.nupkg.sha512",
     "C:\\Users\\Mzweshiah\\.nuget\\packages\\microsoft.aspnetcore.authentication.openidconnect\\5.0.10\\microsoft.aspnetcore.authentication.openidconnect.5.0.10.nupkg.sha512",
     "C:\\Users\\Mzweshiah\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\5.0.4\\microsoft.aspnetcore.cryptography.internal.5.0.4.nupkg.sha512",
     "C:\\Users\\Mzweshiah\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\5.0.4\\microsoft.aspnetcore.cryptography.keyderivation.5.0.4.nupkg.sha512",

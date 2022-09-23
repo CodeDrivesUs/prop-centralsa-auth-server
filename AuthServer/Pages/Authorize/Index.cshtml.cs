@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.SignalR;
 using AuthServer.Services;
+using System.Security.Claims;
+using AuthServer.Models;
 
 namespace AuthServer.Pages.Authorize
 {
@@ -22,8 +24,12 @@ namespace AuthServer.Pages.Authorize
 
         public async Task OnGetAsync(string connectionId)
         {
-        //    string UserName = User.Identity.Name.ToString();
-            var token = await TokenService.GetBearerTokenAsync();
+      
+           await _context.Clients.Client(connectionId).SendAsync("signInSuccess", new SingInResponse { 
+               access_token= await TokenService.GetBearerTokenAsync(),
+               userName = User.FindFirstValue(ClaimTypes.Email)
+           });
+
         }
     }
 }
